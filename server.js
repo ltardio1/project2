@@ -93,11 +93,11 @@ app.get('/', function(req, res) {
 
 
 
-app.listen(port, function() {
+app.listen(port);
     console.log('=======================');
     console.log('Running on port ' + port);
     console.log('=======================');
-});
+
 
 
 
