@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>USER SHOW</title>
+	<link rel="stylesheet" type="text/css" href="/css/blog.css">
+</head>
+<body>
+
+				<!-- user is referring to var User in usersController??? -->
+
+
+<!-- somehow this enables me to display the user's name in the header -->
+<!-- but when i try to click on the 'Edit' link, error points to this line of code and says that it cannot read property of user				 -->
+<p id="user_id" style="display: none"><%= user.id %></p>
+
+
+<div id="container">
+
+
+
+	<div id="show-header">
+		<!-- <div id="nav-bar-container"> -->
+		
+			
+			<div class="nav-bar-all-entries">
+				<a href="/entries"><p>All Entries</p></a>		
+			</div>
+				<!-- close nav-bar-links -->
+			<div class="nav-bar-backtohome">
+				<a href="/users"><p>Back to Home</p></a>
+			</div>
+				<!-- close nav-bar-links -->
+		
+		<!-- </div> -->
+			<!-- close nav-bar-container -->
+
+
+
+	<!-- <div id="users-name-container"> -->
+			<!-- primary header displaying title of user who's page it is -->
+		<div id="users-name-inner">
+			<h1 id="user-title"><%= user.username %>'s entries</h1>
+		</div>
+
+	<!-- </div> -->
+
+		
+
+	</div>
+		<!-- close show-header -->
+
+
+
+		<!-- main contains everything else that is not shown in the header -->
+		<main>
+
+
+
+				<!-- if this show page belongs to the user who is visitng it then they will have the option of adding new content -->
+			<% if(usertrue) { %>
+
+				<div id="newEditAndDelete">
+
+
+					<div id="boxForLinkToNew">
+
+						<a href="/users/<%= user.id %>/new">
+							<p>Add New</p>
+						</a>
+						
+					</div>
+
+
+			<% } %>
+
+
+
+
+
+
+						<!-- container holding all of the user's content -->
+					<div id="entries-container">
+							
+						<% for (var i=0; i < user.entries.length; i++) { %>
+
+							<div class="entry">
+
+								<p><%= user.entries[i].body %></p>
+								
+								<a href="/users/<%= user.id %>/<%=user.entries[i].id%>/edit">
+									<!-- user.id = original URI for above link-->
+									<h3>Edit<h3>
+								</a>
+
+							</div>
+								<!-- close entry -->
+
+
+
+							<% if(usertrue) { %>
+							
+							
+
+
+								<!-- delete box containing button -->
+							<div class="delete-button-container">	
+
+								<form action="/users/<%= user.id %>" method="POST">
+									<input type="hidden" name="_method" value="DELETE">
+										
+									<button class="delete-button">Delete</button>
+									
+								</form>
+
+							</div>
+								<!-- close delete box -->
+
+							<% } %>
+								<!-- close if(usertrue) -->
+
+						<% } %>
+							<!-- close loop -->
+
+					</div>	
+						<!-- close entries-container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				</div>	
+						<!-- close newEditAndDelete box -->
+				
+
+		</main>
+		
+
+	</div>
+		<!-- close container			 -->
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

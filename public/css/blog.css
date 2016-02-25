@@ -1,0 +1,382 @@
+
+html, body { height: 100%; width: 100%; margin: 0; }
+/*==================================================================
+				
+						LANDING PAGE
+
+==================================================================
+*/
+
+/*#landing-container {
+
+	height: 900px;
+	width: 1000px;
+	border: 4px double black;
+
+}*/
+
+
+
+#container {
+
+	height: 90%; 
+	width: 95%;
+	/*border: 10px double black;*/
+	margin: 20px auto;
+
+}
+
+
+	
+/*box for enter button*/
+#enter{
+
+	height: 25%; 
+	width: 45%;
+	border-top: 4px solid black;
+	border-bottom: 2px solid black;
+	margin: 100px auto;
+	text-align: center;
+	padding-top: 3em;
+
+}
+
+#enter-link{
+
+	text-decoration: none;
+	color: black;
+
+}
+/*==================================================================
+				
+						USERS / INDEX.EJS
+
+==================================================================
+*/
+
+
+
+#sub-container{
+
+	height: 75%;
+	width: 75%;
+	border: 4px solid black;
+	padding: 1em;
+	margin: 0 auto;
+
+
+}
+
+/*   OUTER container for drop-down menu    */
+#select-container{
+
+	height: 40%; width: 40%;
+	border: 4px solid black;
+	margin: 0 auto;
+	text-align: center;
+
+
+}	
+
+
+
+
+
+ /*  INNER container for drop-down menu   */
+#inner-select-container{
+
+	height: 10%; width: 10%;
+	border: 4px double black;
+	margin: 100px auto;
+	text-align: center;
+
+}
+
+
+
+
+
+/*text on top of the drop-down menu*/
+#choose{
+
+}
+
+				
+/*the actual drop down menu*/
+#dropdown{
+
+}
+
+
+
+/*container for login / signup message if user is not logged in*/
+#loginOrSignupMessage{
+
+	height: 60%; width: 60%;
+	border: 4px solid black;
+	margin: 0 auto;
+
+
+}
+
+					
+
+/* h1 text that appears*/
+#message-text{
+
+}
+
+
+
+
+
+#signup-form-container{
+
+	height: 20%; width: 20%;
+	border: 4px solid black;
+	margin: 0 auto;
+
+}
+
+
+
+/*h3 text that heads the sign up form*/
+#signup-label{
+
+}
+
+
+
+
+
+#login-form-container{
+
+	height: 20%; width: 20%;
+	border: 4px solid black;
+	margin: 0 auto;
+
+}
+
+
+
+#login-label{
+
+}
+
+
+
+
+
+
+/*box containing link to logout*/
+#logout-container{
+
+}
+
+
+/*self explanitory*/
+.logoutText{
+
+}
+
+
+
+
+
+
+
+
+/*==================================================================
+				
+						USERS / SHOW.EJS
+
+==================================================================
+*/
+
+
+
+
+/*    box containing header 'all entries'   */
+#show-header{
+
+	height: 20%; 
+	width: 100%;
+	border-top: 4px solid black;
+	border-bottom: 4px solid black;
+	display: inline-block;
+
+
+
+}
+
+
+
+
+/*    h3 text 'All Entries'    */
+/*#title{
+
+}
+*/
+
+
+
+/*    containing nav links    */
+.nav-bar-all-entries{
+
+	height: 40%; width: 10%;
+	border-left: 2px solid black;
+	display: inline-block;
+	padding-left: 1em;
+
+}
+
+.nav-bar-backtohome{
+
+	height: 40%; width: 10%;
+	border-right: 2px solid black;
+	display: inline-block;
+	padding-right: 1em;
+
+}
+
+
+/*#users-name-container{
+
+	height: 80%; 
+	width: 20%;
+	border: 4px solid black;
+	display: inline-block;
+	margin-left: 150px;
+
+}*/
+
+
+#users-name-inner{
+
+	height: 80%; 
+	width: 20%;
+	margin-left: 170px;
+	margin-top: 10px; 
+	border: 4px solid black;
+	display: inline-block;
+	text-align: center;
+}
+
+
+
+#user-title{
+
+}
+				
+
+
+
+/*   container for the links / forms inside if(usertrue)   */
+#newEditAndDelete{
+
+}
+
+
+
+/*          =============================================         */
+/*  |	 |		WITHIN THE newEditAndDelete container	   |   |  */
+/*  V	 V	=============================================  V   V  */
+
+/*box for link to 'new.ejs' within newEditAndDelete container*/
+#boxForLinkToNew{
+
+}
+
+
+
+/*container holding all of the user's content*/
+#entries-container{
+
+}
+
+
+
+/*div directly containing each of the user's posts */
+.entry{
+
+}
+
+
+
+/*delete box containing button*/
+.delete-button-container{
+
+}
+
+
+/*button*/
+.delete-button{
+
+}
+
+
+
+
+
+
+
+/*==================================================================
+				
+						USERS / NEW.EJS
+
+==================================================================
+*/
+
+
+
+
+
+
+
+
+
+/*box containing form for create new*/
+#createNew{
+
+}
+
+
+
+
+
+
+
+
+/*==================================================================
+				
+						USERS / EDIT.EJS
+
+==================================================================
+*/
+
+
+
+
+#edit-container{
+
+}
+
+
+
+
+#edit-container-inner{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

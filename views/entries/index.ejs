@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+</head>
+<body>
+
+<div class="container">
+
+		<div id="header">
+			<% include ../header_partial.ejs %>
+		</div>
+
+		<main>
+			<!-- <div id="map-canvas"></div> -->
+
+			<div id="all-entries">
+
+				<a href="/users"><p>Entries by user</p></a>
+
+				<% for (var i=0; i < entries.length; i++) { %>
+
+					<div class="entry">
+
+						
+						<p><%= entries[i].body %></p>
+
+					</div>
+
+				<% } %>
+
+			</div> 
+				<!-- end nav-bar -->
+
+		</main>
+
+
+	</div>
+		<!-- close page container -->
+
+
+</body>
+</html>

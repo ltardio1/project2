@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>NEW</title>
+	<link rel="stylesheet" type="text/css" href="/css/blog.css">
+</head>
+<body>
+
+
+
+<div id="container">
+
+	<div id="createNew">
+
+		THIS IS USER NAME: <%=user.username%>
+
+		<p>Add New Entry</p>
+
+		<form action="/users/<%= user.id %>/newentry" method="POST">
+						
+			<textarea name="body" rows="8" cols="40" placeholder="body"></textarea></br>
+
+			<button>submit</button>
+
+		</form>
+
+
+
+
+			
+	</div>
+
+</div>
+
+
+</body>
+</html>

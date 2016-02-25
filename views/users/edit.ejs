@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>EDIT</title>
+	<link rel="stylesheet" type="text/css" href="/css/blog.css">
+</head>
+<body>
+
+
+<div id="container">
+
+
+
+	<div id="nav-bar-outer">
+
+		<div id="nav-bar-inner">
+
+			<a href="/entries"><p>All Entries</p></a>
+			
+			<a href="/users"><p>Back to Home</p></a>
+
+		</div>
+			<!-- close nav-bar-inner -->
+	</div>
+		<!-- close nav-bar-outer -->
+
+
+	<div id="edit-container">
+
+		<div id="edit-container-inner">
+
+			<p>Edit Entry</p>
+			
+			<!-- user.entries -->
+
+		 
+				<form action="/users/<%=user%>/<%= entry.id %>/edit" method="POST">
+								
+					<textarea name="body" rows="8" cols="40" value="<%= entry.id %>"></textarea></br>
+
+					<input type="hidden" name="_method" value="PUT"/>
+					<!-- <input type="hidden" name="_method" value="PUT"/> -->
+					
+					<button>Update!</button>
+
+				</form>
+		
+
+		</div>
+			<!-- close edit-inner -->
+	</div>
+		<!-- close edit-outer -->
+
+
+
+
+</div>
+	<!-- close page container -->
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
