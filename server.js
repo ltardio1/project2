@@ -5,10 +5,10 @@ var express        = require('express'),
     mongoose       = require('mongoose'),
     passport       = require('passport'),
     session        = require('express-session'),
-    port           = 3000 || process.env.PORT,
+    port           = process.env.PORT || 3000,
     app            = express();
 
-var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost/project2';
+var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/project2'
 
 mongoose.connect(mongoUri);
 
@@ -93,13 +93,13 @@ app.get('/', function(req, res) {
 
 
 
-app.listen(port);
+app.listen(port, function(){
     console.log('=======================');
     console.log('Running on port ' + port);
     console.log('=======================');
 
 
-
+})
 
 
 
