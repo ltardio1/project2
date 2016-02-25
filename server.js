@@ -8,6 +8,14 @@ var express        = require('express'),
     port           = 3000 || process.env.PORT,
     app            = express();
 
+var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost/project2';
+
+mongoose.connect(mongoUri);
+
+// mongoose.connect('mongodb://localhost/project2');
+
+
+
 var cookieParser = require('cookie-parser');
 
 
@@ -19,7 +27,6 @@ var bcrypt = require('bcrypt-nodejs');
 require('./config/passport')(passport);
 
 
-mongoose.connect('mongodb://localhost/project2');
 
 var entriesController = require('./controllers/entriesController.js');
 var usersController     = require('./controllers/usersController.js');
