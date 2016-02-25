@@ -173,22 +173,33 @@ router.put('/:id/:entryid/edit', function(req, res){
    
 
     	for (var i = 0; i< user.entries.length; i++) {
-    	
+    			console.log("================");
+				console.log(user.entries[i].id);
+				console.log("================");
+
     		if (user.entries[i].id == req.params.entryid) {
-	    		console.log("==========");
-				console.log("==========");
-				console.log("==========");
+	    		console.log("==================");
+				console.log(user.entries[i].body);
+				console.log("==================");
 				
 
-    			User.update({ _id: req.params.entryid }, {$set : {'entries.$.body': req.body.body}});
+				console.log("===========");
+				console.log(req.body.body);
+				console.log("===========");
+
+				user.entries[i].body = req.body.body;
+
+				// user.entries[i] = req.body;
+
+    			// User.update({ _id: req.params.entryid }, {$set : {'entries.$.body': req.body.body}});
 
 
-				// User.save(function(err, user) {
-    				console.log(user.entries);
+				user.save(function(err) {
+    			
     				
-    				res.redirect('/users/' + user.id);
+    				res.redirect('/users/' + req.params.id);
 
-    			// });
+    			});
 			}
     		}
     	});
