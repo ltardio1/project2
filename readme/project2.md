@@ -3,6 +3,8 @@
 								==========
 								  MODELS
 								==========
+
+
 		==========						
 		  users:
 		==========
@@ -538,9 +540,46 @@ Each document has an _id. DocumentArrays have a special id method for looking up
 ------------------------------------------------------------------
 
 			
+THIS TOOK ME ENTIRELY TOO LONG TO FIGURE OUT BUT THIS IS THE FINAL SOLUTION THAT WORKS!!!!!!!!
 
 
 
+// 						===========
+//   						PUT
+// 			        	===========
+
+
+
+router.put('/:id/:entryid/edit', function(req, res){
+
+    User.findByIdAndUpdate(req.params.id, req.body, function(err, user){
+   
+    	for (var i = 0; i< user.entries.length; i++) {
+    		
+    		if (user.entries[i].id == req.params.entryid) {
+
+				// replacing the old with the new
+				user.entries[i].body = req.body.body;
+
+				--------------------------------------------------------------
+--- >			// I tried to use this helper function and query because 
+
+--- >			// even though I already accessed the user model with 'User.							findByIdAndUpdate',
+				// I thought I still needed to use the '$set'  query  
+
+// 				User.update({ _id: req.params.entryid }, {$set : {'entries.$.body': req.				body.body}});
+				-------------------------------------------------------------------
+
+				user.save(function(err) {
+    			
+    				
+    				res.redirect('/users/' + req.params.id);
+
+    			});
+			}
+    		}
+    	});
+		});
 
 
 

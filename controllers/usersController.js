@@ -173,6 +173,8 @@ router.put('/:id/:entryid/edit', function(req, res){
    
 
     	for (var i = 0; i< user.entries.length; i++) {
+
+    			// printing out the id of the specific entry that the user wishes to edit
     			console.log("================");
 				console.log(user.entries[i].id);
 				console.log("================");
@@ -192,17 +194,26 @@ router.put('/:id/:entryid/edit', function(req, res){
 				// replacing the old with the new
 				user.entries[i].body = req.body.body;
 
-				// user.entries[i] = req.body;
 
-    			// User.update({ _id: req.params.entryid }, {$set : {'entries.$.body': req.body.body}});
+//		{		// failed attempt at the solution 
+//		{		// user.entries[i] = req.body;
 
+//								----------
+//		{		 I tried to use this helper function and query because 
+//		{		 even though I already accessed the user model with 'User.findByIdAndUpdate',
+//		{		 I thought I still needed to use the '$set'  query  
+//		{									
+//   	{		 User.update({ _id: req.params.entryid }, {$set : {'entries.$.body': req.body.body}});
+//								----------
 
+//		{  		// saving req.body.body (the new text) 
+//		{ 		// that should replace user.entries[i].body (the old text)
 				user.save(function(err) {
-    			
     				
     				res.redirect('/users/' + req.params.id);
 
     			});
+    			// end save function
 			}
     		}
     	});
@@ -215,24 +226,6 @@ router.put('/:id/:entryid/edit', function(req, res){
 		// console.log("==========");
 
     	
-  
-
-// router.put('/:id', function(req, res){
-//   // Access the article that is being edited and change it in the Articles collection
-//   Article.findByIdAndUpdate(req.params.id, req.body, function(err, article){
-//     // Access the user via the article's author_id and update the title and body of the specific article in the user's array of articles
-//     User.update({_id: article.author_id, 'articles._id': req.params.id}, {$set:{'articles.$.title': req.body.title}}, {$set:{'articles.$.body': req.body.body}}, function(){
-//       res.redirect('/articles/' + req.params.id);
-//     });
-//   });
-// });
-
-
-
-
-
-// saves a new entry to the Entry model and the User's entry list
-
 
 
 
