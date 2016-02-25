@@ -178,15 +178,18 @@ router.put('/:id/:entryid/edit', function(req, res){
 				console.log("================");
 
     		if (user.entries[i].id == req.params.entryid) {
+
+    			// pre-existing text for the post that I want to access
 	    		console.log("==================");
 				console.log(user.entries[i].body);
 				console.log("==================");
 				
-
+				// new text that user types in
 				console.log("===========");
 				console.log(req.body.body);
 				console.log("===========");
 
+				// replacing the old with the new
 				user.entries[i].body = req.body.body;
 
 				// user.entries[i] = req.body;
